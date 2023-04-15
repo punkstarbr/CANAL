@@ -47,7 +47,7 @@ def is_channel_working(url, headers=None):
         return False
 
 repo_urls = [
-    "https://github.com/junguler/test1/raw/main/baked/AA-Vatican.txt"
+    "https://github.com/junguler/test1/raw/main/baked/AA-Portugal.txt"
 ]
 
 working_channels = []
