@@ -48,7 +48,7 @@ def is_channel_working(url, headers=None):
 
 
 repo_urls = [
-    "https://github.com/punkstarbr/STR-YT/raw/main/RUSSIA.M4U"
+    "https://github.com/punkstarbr/STR-YT/raw/main/LISTA%20JAP%C3%83O.M3U"
 ]
 
 working_channels = []
@@ -94,7 +94,7 @@ for url in repo_urls:
                         })
 
 
-with open("RUSSIA.M4U", "w") as f:
+with open("listajapao", "w") as f:
     for channel in working_channels:
         if "extm3u_line" in channel:
             f.write(f"{channel['extm3u_line']}\n")
