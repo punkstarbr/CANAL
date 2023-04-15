@@ -41,10 +41,11 @@ def is_channel_working(url, headers=None):
             "-"
         ]
 
-        process = subprocess.run(cmd, stderr=subprocess.PIPE, universal_newlines=True, timeout=5)
+        process = subprocess.run(cmd, stderr=subprocess.PIPE, universal_newlines=True, timeout=5, errors='replace')  # Add errors='replace'
         return process.returncode == 0
     except (subprocess.TimeoutExpired, subprocess.CalledProcessError):
         return False
+
 
 repo_urls = [
     "https://github.com/junguler/test1/raw/main/baked/AA-Angola.txt"
