@@ -5,9 +5,9 @@ name: Baixando Lista
 # O script é disparado por meio de uma agendamento (cron) ou pela ação de pull request.
 
 on:
-  schedule:
+  #schedule:
     # Agendamento para executar a tarefa a cada 30 minutos
-    - cron: '*/30 * * * *'
+    #- cron: '*/30 * * * *'
   pull_request:
     branches:
       - main
