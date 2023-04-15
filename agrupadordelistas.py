@@ -45,7 +45,7 @@ def is_channel_working(url, headers=None):
         return False
 
 repo_urls = [
-    "https://github.com/punkstarbr/STR-YT/raw/main/lista1.m3u"
+    "https://github.com/punkstarbr/CANAL/raw/main/lista1.M3U"
 ]
 
 working_channels = []
