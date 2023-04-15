@@ -18,11 +18,13 @@ def search_image_url(channel_name):
         img_tags = soup.find_all("img")
         
         for img_tag in img_tags:
-            img_url = img_tag["src"]
-            if re.match(r'^https?://', img_url):
-                return img_url
+            if "src" in img_tag.attrs:  # Add this conditional check
+                img_url = img_tag["src"]
+                if re.match(r'^https?://', img_url):
+                    return img_url
                 
     return None
+
 
 def is_channel_working(url, headers=None):
     try:
