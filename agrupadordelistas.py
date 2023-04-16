@@ -5,6 +5,13 @@ from bs4 import BeautifulSoup
 import re
 
 
+def is_license_key_present(kodiprop_lines):
+    for kodiprop_line in kodiprop_lines:
+        if "inputstream.adaptive.license_key" in kodiprop_line:
+            return True
+    return False
+
+
 def search_image_url(channel_name):
     query = f"{channel_name} logo filetype:png OR filetype:jpg"
     search_url = f"https://www.google.com/search?q={query}&tbm=isch"
@@ -84,7 +91,8 @@ for url in repo_urls:
                         break
 
                 if stream_url:
-                    should_add_channel = is_channel_working(stream_url, headers) or stream_url.startswith("https://video-auth") or stream_url.startswith("https://d1zx6l1dn8vaj5.cloudfront.net/out/v1/b89cc37caa6d418eb423cf092a2ef970")
+                    has_license_key = is_license_key_present(kodiprop_lines)
+                    should_add_channel = is_channel_working(stream_url, headers) or has_license_key or stream_url.startswith("https://mitelefe.com/") or stream_url.startswith("https://telefe.com") or stream_url.startswith("https://video-auth") or stream_url.startswith("https://d1zx6l1dn8vaj5.cloudfront.net/out/v1/b89cc37caa6d418eb423cf092a2ef970")
                     if should_add_channel:
                         working_channels.append({
                             "extinf_line": extinf_line,
