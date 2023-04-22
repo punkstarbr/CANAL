@@ -114,7 +114,7 @@ def is_channel_working(url, headers=None):
         return False
 
 repo_urls = [
-    "https://github.com/punkstarbr/STR-YT/raw/main/REALITY'SLIVE.m3u"
+    "https://github.com/punkstarbr/STR-YT/raw/main/OUTRA%20LISTA"
 ]
 
 working_channels = []
@@ -310,7 +310,7 @@ def is_channel_working(url, headers=None):
 
 
 repo_urls = [
-    "https://github.com/punkstarbr/CANAL/raw/main/listapt.m3u"
+    "https://github.com/punkstarbr/STR-YT/raw/main/espanol.m3u"
 ]
 
 working_channels = []
